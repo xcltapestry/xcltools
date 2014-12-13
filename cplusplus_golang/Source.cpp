@@ -72,7 +72,7 @@ void iota_demo(){
 	std::iota(e, e + 5, 'e');
 	for (size_t i = 0; i < 5; i++)
 	{
-		cout << "                      old = " << f[i] << " iota = " << e[i] << endl;
+		cout << " iota = " << e[i] << endl;
 	}
 	
 
@@ -288,14 +288,14 @@ int main(void){
 		iota_demo();
 	cout << "值顺序递增 end." << endl;
 
-	cout << "\n多值赋值 " << endl;
+	cout << "\n多值赋值及函数返回多值 " << endl;
 		int ti;
 		string ts;
 		tie(ti, ts) = tuple_demo();
 		cout << "main() <- tuple_demo(): " << ti << " " << ts.c_str() << endl;
-	cout << "多值赋值 end." << endl;
+	cout << "多值赋值及函数返回多值 end." << endl;
 
-	cout << "\n函数返回多值/map查找 " << endl;
+	cout << "\nmap查找 " << endl;
 		auto myMap = map_str_int{ { "aa", 1 }, { "bb", 2 }, { "cc", 3 } };
 
 		string mpKey;
