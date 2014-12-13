@@ -174,31 +174,30 @@ template<typename... Args> int countArgs(Args... args){
 ///////////////////////////////////////////////////
 typedef map <string, int > map_str_int;
 tuple<string, int, bool> mapfind_demo(map_str_int myMap, string key){
-
 	//typedef map <string, int > map_str_int;
 	//auto myMap = map_str_int{ { "aa", 1 }, { "bb", 2 }, { "cc", 3 } };
 
-	auto found = [=](const map_str_int::value_type &mp){
-		if (mp.first == key)
-		{
-			cout << "found map=" << mp.second << endl;
-			return true;
-		}
-		return false;
-	};
-
-	map_str_int::iterator pos;
-
-	pos = find_if(begin(myMap), end(myMap), found);
-
+	map_str_int::iterator pos;	
+	pos = myMap.find(key);
 	if (pos == myMap.end()){
 		return make_tuple("", 0, false);
 	}
 	else{
 		return make_tuple(pos->first, pos->second, true);
 	}
-
 }
+
+/*
+auto found = [=](const map_str_int::value_type &mp){
+if (mp.first == key)
+{
+cout << "found map=" << mp.second << endl;
+return true;
+}
+return false;
+};
+//pos = find_if(begin(myMap), end(myMap), found);
+*/
 
 
 ///////////////////////////////////////////////////

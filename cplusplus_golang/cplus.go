@@ -26,7 +26,14 @@ fmt.Println(mulln)
 
 	mapfind_demo();
 
+	
+	//可变参数
+	args_demo(5,6,7,8);
+	mArr := []int{ 5, 6, 7,8}
+	args_demo(mArr[0],mArr[1:]...);
+
 	fmt.Println("fmtPrintln(): ", 1, 2.0, "C++11", "Golang");
+
 
 	callFunc("回调就是你调我，我调它，大家一起玩。",printFunc)
 
@@ -52,9 +59,17 @@ fmt.Println(mulln)
 }
 
 func init_demo(){
+	var k int
+	fmt.Println(k)
+
 	mArr := []int{ 1, 2, 3}
 	var mMap = map[string]int {"a":1,"b":2}
-	fmt.Printf("\narray:%v\nmap:%v \n",mArr,mMap)
+	fmt.Printf("array:%v\nmap:%v \n",mArr,mMap)
+
+	i := 10  
+	pi := &i  //*i
+	ppi := &pi  //**int
+	fmt.Println(i,*pi,**ppi)
 }
 
 func lambda_demo(){
@@ -78,6 +93,13 @@ func iota_demo(){
 }
 
 func tuple_demo()(int,string){
+
+	a,b := 1,2
+	fmt.Println("a:",a," b:",b);
+
+	c,d := b,a
+	fmt.Println("c:",c," d:",d);
+
 	return 168, "函数返回的字符串"
 }
 
@@ -88,6 +110,13 @@ func mapfind_demo(){
 		fmt.Println("found :",val);
 	}else{
 		fmt.Println("not found");
+	}
+}
+
+func args_demo(first int,args ...int){
+	fmt.Println("ars_demo first:",first)
+	for _,i := range args {
+		fmt.Println("args:",i)
 	}
 }
 
