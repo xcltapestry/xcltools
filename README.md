@@ -37,7 +37,7 @@ EXAMPLE:
   scounter -i .go -v=false /usr/local/go/src
   scounter -l=680 -i=.cpp,.h,.hpp,.c  /xclproject/common/src
   
-  
+例子：  
 代码统计汇总(2014-12-22 22:20:47)
 =================================================
 分析根目录: E:\GitHub\GitHub\XCL-Charts\XCL-Charts\src
