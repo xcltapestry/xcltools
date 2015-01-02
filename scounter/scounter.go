@@ -236,6 +236,7 @@ func parseFile(srcfile string, infoChan chan fileInfo, done func()) {
 			continue
 		}
 
+		str = strings.TrimSpace(str)
 		if IsLnRem(str) || IsRem(str) {
 			rem++
 		} else {
